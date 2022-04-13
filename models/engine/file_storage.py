@@ -10,7 +10,14 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns the list of objects of one type of class or all"""
-        return FileStorage.__objects
+        if cls:
+            new_objects = {}
+            for key, value in FileStorage.__objects.items():
+                if cls.__name__ == value.to_dict()['__class__']:
+                    new_objects[key] = value
+            return new_objects
+        else:
+            return self.__objects
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
@@ -53,4 +60,4 @@ class FileStorage:
         """Delete an existing element in dictionary"""
         if obj:
             key = "{}.{}".format(type(obj).__name__, obj.id)
-            del FileStorage.__objects[key]
+            del self.__objects[key]
