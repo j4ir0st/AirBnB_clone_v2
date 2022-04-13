@@ -131,7 +131,7 @@ class HBNBCommand(cmd.Cmd):
                 # Info: All underscores _ must be replace by spaces.
                 value = value.replace('_', ' ')
                 # Info: Remove "".
-                value = value.replace('\"', '')
+                value = value.replace("\"", '')
                 setattr(new_instance, key, value)
         storage.save()
         print(new_instance.id)
