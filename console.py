@@ -132,6 +132,12 @@ class HBNBCommand(cmd.Cmd):
                 value = value.replace('_', ' ')
                 # Info: Remove "".
                 value = value.replace("\"", '')
+                try:
+                    # Info! Parse value in type of data.
+                    tmp_value = eval(value)
+                    value = tmp_value
+                except BaseException:
+                    pass
                 setattr(new_instance, key, value)
         storage.save()
         print(new_instance.id)
