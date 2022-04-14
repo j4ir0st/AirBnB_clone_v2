@@ -128,7 +128,7 @@ class HBNBCommand(cmd.Cmd):
         new_instance = HBNBCommand.classes[class_name]()
         for token in tokens:
             if token != class_name:
-                (key, value) = token.split(sep='=', maxsplit=2)
+                (key, value) = token.split(sep='=', maxsplit=1)
                 # Info: All underscores _ must be replace by spaces.
                 value = value.replace('_', ' ')
                 # Info: Remove "".
