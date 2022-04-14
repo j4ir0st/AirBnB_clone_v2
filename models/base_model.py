@@ -59,7 +59,7 @@ class BaseModel:
         """Convert instance into dict format"""
         dictionary = dict(self.__dict__)
 
-        if '_sa_instance_state' in dictionary:
+        if '_sa_instance_state' in dictionary.keys():
             del dictionary['_sa_instance_state']
 
         dictionary["__class__"] = str(type(self).__name__)
