@@ -13,8 +13,7 @@ app = Flask(__name__)
 def states_list():
     """ Returns hello HBNB """
     st = storage.all(State)
-    print(st)
-    return render_template('7-states_list.html', items=st)
+    return render_template('7-states_list.html', items=st.values())
 
 
 @app.teardown_appcontext
