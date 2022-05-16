@@ -36,7 +36,7 @@ def python_text(text):
 def n_isnumber(n):
     """ Returns hello HBNB """
     if (isinstance(n, int)):
-        return '{} is number'.format(n)
+        return '{} is a number'.format(n)
 
 
 if __name__ == "__main__":
